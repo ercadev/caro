@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+</head>
+
+<body>
+    <h1>CAROUSEL</h1>
+    <div class="carousel-container">
+        <div class="image-container">
+            <div class="overlay">
+                <div id="first-header" class="overlay-header">
+                    <h1>A title for the first article in the carousel</h1>
+                    <p><b>NYHETER</b> - 2 Timmar sedan</p>
+                </div>
+                <div id="second-header" class="overlay-header">
+                    <h1>A title for the second article in the carousel</h1>
+                    <p><b>GUIDER</b> - 2 Timmar sedan</p>
+                </div>
+                <div id="third-header" class="overlay-header">
+                        <h1>A title for the third article in the carousel</h1>
+                        <p><b>TIPS</b> - 2 Dagar sedan</p>
+                    </div>
+            </div>
+            <img id="image-first" src="img/one.jpg" alt="">
+            <img id="image-second" src="img/two.jpg" alt="">
+            <img id="image-third" src="img/three.jpg" alt="">
+        </div>
+        <div class="list-container">
+            <div onmouseover="manualChangeItem('first')" id="first-item" class="list-item">
+                <p class="header">A title for the first article in the carousel</p>
+                <p class="excerpt">Förutom att det är en affär – om den går igenom – som ritar om medielandskapet kan det också komma att få
+                    effekt på en rad sektorer, så som den svenska e-handels- och startupsektorn.</p>
+                <p class="footer">2 Timmar sedan</p>
+            </div>
+            <div onmouseover="manualChangeItem('second')" id="second-item" class="list-item">
+                <p class="header">A title for the second article in the carousel</p>
+                <p class="excerpt">Förutom att det är en affär – om den går igenom – som ritar om medielandskapet kan det också komma att få
+                    effekt på en rad sektorer, så som den svenska e-handels- och startupsektorn.</p>
+                <p class="footer">8 Timmar sedan</p>
+            </div>
+            <div onmouseover="manualChangeItem('third')" id="third-item" class="list-item">
+                <p class="header">A title for the third article in the carousel</p>
+                <p class="excerpt">Förutom att det är en affär – om den går igenom – som ritar om medielandskapet kan det också komma att få
+                    effekt på en rad sektorer, så som den svenska e-handels- och startupsektorn.</p>
+                <p class="footer">1 dag sedan</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>

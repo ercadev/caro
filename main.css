@@ -1,0 +1,155 @@
+body {
+    width: 80%;
+    background-color: #f7f7f7;
+    margin-left: 10%;
+    font-family: "Raleway";
+}
+
+.carousel-container {
+    height: 390px;
+    width: 100%;
+    box-shadow: 6px 6px 20px -15px rgba(0, 0, 0, 0.35);
+    outline: 1px solid #f1f1f1;
+    background-color: #fff;
+}
+
+.image-container {
+    height: inherit;
+    background-color: #eaeaea;
+    width: 70%;
+    float: left;
+    position: relative;
+}
+
+.list-container {
+    height: inherit;
+    float: left;
+    width: 30%;
+}
+
+.list-item {
+    padding-right: 24px;
+    padding-left: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
+    height: 104px;
+    background-color: #fff;
+    transition: 1s;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.list-item.active {
+    height: 150px;
+}
+
+.list-item p.header {
+    color: #525252;
+    font-weight: 600;
+    padding-left: 6px;
+    margin-bottom: 4px;
+}
+
+.list-item p.excerpt {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 12px;
+    margin: 0;
+    font-weight: 200;
+    line-height: 12px;
+    height: 0px;
+    color: white;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.list-item p.footer {
+    font-weight: 600;
+    font-size: 10px;
+    padding-left: 6px;
+    color: #cccccc;
+}
+
+.list-item.active p.excerpt {
+    color: #6d6d6d;
+    height: 25px;
+    overflow: auto;
+}
+
+.list-item.active p.header {
+    color: #333;
+    height: auto;
+    overflow: auto;
+}
+
+.image-container img {
+    top: 0;
+    left: 0;
+    height: inherit;
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 1s;
+}
+
+.image-container img.show {
+    transition: 1s;
+    opacity: 1;
+}
+
+.image-container .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+24,3a3a3a+87&0+41,0.65+63,0.65+91 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 24%, rgba(16, 16, 16, 0) 41%, rgba(36, 36, 36, 0.65) 63%, rgba(58, 58, 58, 0.65) 87%, rgba(58, 58, 58, 0.65) 91%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 24%, rgba(16, 16, 16, 0) 41%, rgba(36, 36, 36, 0.65) 63%, rgba(58, 58, 58, 0.65) 87%, rgba(58, 58, 58, 0.65) 91%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 24%, rgba(16, 16, 16, 0) 41%, rgba(36, 36, 36, 0.65) 63%, rgba(58, 58, 58, 0.65) 87%, rgba(58, 58, 58, 0.65) 91%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a63a3a3a', GradientType=0);
+    /* IE6-9 */
+    z-index: 1;
+}
+
+.overlay-header {
+    color: white;
+    padding-right: 24px;
+    position: absolute;
+    bottom: 48px;
+    left: 24px;
+    opacity: 0;
+}
+
+.overlay-header h1 {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #eaeaea;
+    overflow: visible;
+}
+
+.overlay-header p {
+    margin-top: 0px;
+    font-size: 14px;
+    color: #acacac;
+    opacity: 0;
+}
+
+.overlay-header.active {
+    transition-delay: 1s;
+    transition: 2s;
+    left: 48px;
+    opacity: 1;
+}
+
+.overlay-header.active p {
+    transition: 1s;
+    transition-delay: 1.5s;
+    opacity: 1;
+}
+
