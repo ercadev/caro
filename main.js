@@ -1,10 +1,18 @@
 /**
- * Init the first item with image and header.
+ * Wait for DOM to load and then listen for mouseover
  */
 
-document.getElementById("first-item").className = "list-item active";
-document.getElementById("image-first").className = "show";
-document.getElementById("first-header").classList.add('active');
+window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('first-item').addEventListener("mouseover", function () {
+        manualChangeItem("first");
+    });
+    document.getElementById('second-item').addEventListener("mouseover", function () {
+        manualChangeItem("second");
+    });
+    document.getElementById('third-item').addEventListener("mouseover", function () {
+        manualChangeItem("third");
+    });
+}, false);
 
 /**
  * Start the loop that change item every 7000ms (7 seconds).
@@ -15,6 +23,7 @@ setInterval(changeItem, 7000);
 /**
  * Function checks which item is actice and then change to the next one.
  */
+
 
 function changeItem() {
     if (document.getElementById("first-item").classList.contains('active')) {
@@ -28,6 +37,10 @@ function changeItem() {
         setActiveClass("first");
     }
 }
+
+/**
+ * Function manually change active item
+ */
 
 function manualChangeItem(item) {
     if (item == "first") {
@@ -45,14 +58,21 @@ function manualChangeItem(item) {
     }
 }
 
+/**
+ * Removes active CSS class from a specific item
+ */
+
 function removeActiveClass(item) {
-    document.getElementById(item + "-item").classList.remove('active');
-    document.getElementById(item + "-header").classList.remove('active');
-    document.getElementById("image-" + item).classList.remove('show');
+    document.getElementById(item + "-item").className = "list-item";
+    document.getElementById(item + "-header").className = "overlay-header";
+    document.getElementById("image-" + item).className = "";
 }
 
+/**
+ * Add active CSS class from a specific item
+ */
 function setActiveClass(item) {
-    document.getElementById(item + "-item").classList.add('active');
-    document.getElementById(item + "-header").classList.add('active');
-    document.getElementById("image-" + item).classList.add('show');
+    document.getElementById(item + "-item").className = "list-item active";
+    document.getElementById(item + "-header").className = "overlay-header active";
+    document.getElementById("image-" + item).className = "show";
 }
