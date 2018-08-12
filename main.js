@@ -1,6 +1,6 @@
-/**
- * Wait for DOM to load and then listen for mouseover
- */
+/** 
+ * Wait for DOM to load and then listen for mouseover 
+ */ 
 
 window.addEventListener("DOMContentLoaded", function () {
     document.getElementById('first-item').addEventListener("mouseover", function () {
@@ -38,10 +38,6 @@ function changeItem() {
     }
 }
 
-/**
- * Function manually change active item
- */
-
 function manualChangeItem(item) {
     if (item == "first") {
         removeActiveClass("second");
@@ -58,19 +54,12 @@ function manualChangeItem(item) {
     }
 }
 
-/**
- * Removes active CSS class from a specific item
- */
-
 function removeActiveClass(item) {
     document.getElementById(item + "-item").className = "list-item";
     document.getElementById(item + "-header").className = "overlay-header";
     document.getElementById("image-" + item).className = "";
 }
 
-/**
- * Add active CSS class from a specific item
- */
 function setActiveClass(item) {
     document.getElementById(item + "-item").className = "list-item active";
     document.getElementById(item + "-header").className = "overlay-header active";
