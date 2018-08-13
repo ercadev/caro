@@ -1,7 +1,15 @@
-$height: 380px;
+$carousel-height: 390px;
+$item-height: ($carousel-height / 3) - 20;
+$active-color: #222;
+$active-background: #eaeaea;
 
+.demo {
+    width: 80%;
+    margin-left: 10%;
+    font-family: 'Helvetica';
+}
 .carousel-container {
-    height: $height;
+    height: $carousel-height;
     width: 100%;
     box-shadow: 6px 6px 20px -15px rgba(0, 0, 0, 0.35);
     outline: 1px solid #f1f1f1;
@@ -10,7 +18,7 @@ $height: 380px;
 
 .image-container {
     height: inherit;
-    background-color: #eaeaea;
+    background-color: $active-background;
     width: 70%;
     float: left;
     position: relative;
@@ -23,57 +31,60 @@ $height: 380px;
 }
 
 .list-item {
-    padding-right: 24px;
+    padding-right: 12px;
     padding-left: 24px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 12px;
-    margin-right: 12px;
-    height: 104px;
+    padding-right: 24px;
+    height: $item-height;
     background-color: #fff;
-    transition: 1s;
-    border-bottom: 1px solid #eaeaea;
 }
 
 .list-item.active {
-    height: 150px;
+    height: $item-height + 30;
+    color: #6d6d6d;
+    padding-left: 14px;
+    background-color: #eaeaea;
+    border-left: 10px solid $active-color;
 }
 
 .list-item p.header {
     color: #525252;
     font-weight: 600;
-    padding-left: 6px;
     margin-bottom: 4px;
 }
 
 .list-item p.excerpt {
-    padding-left: 6px;
-    padding-right: 6px;
     font-size: 12px;
     margin: 0;
+    opacity: 0;
     font-weight: 200;
     line-height: 12px;
     height: 0px;
     color: white;
     overflow: hidden;
-    transition: 1s;
 }
+
 
 .list-item p.item-footer {
     font-weight: 600;
     font-size: 10px;
-    padding-left: 6px;
     color: #cccccc;
 }
 
 .list-item.active p.excerpt {
     color: #6d6d6d;
-    height: 25px;
+    height: 24px;
+    opacity: 1;
+    transition: 1s;
+    transition-property: height, opacity;
+    padding-top: 6px;
+    padding-bottom: 6px;
     overflow: auto;
 }
 
 .list-item.active p.header {
-    color: #333;
+    color: $active-color;
     height: auto;
     overflow: auto;
 }
@@ -132,7 +143,6 @@ $height: 380px;
     margin-top: 0px;
     font-size: 14px;
     color: #acacac;
-    opacity: 0;
 }
 
 .overlay-header.active {

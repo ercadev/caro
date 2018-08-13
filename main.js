@@ -12,6 +12,17 @@ window.addEventListener("DOMContentLoaded", function () {
     document.getElementById('third-item').addEventListener("mouseover", function () {
         manualChangeItem("third");
     });
+
+    const excerpts = document.getElementsByClassName('excerpt');
+
+    for (let i = 0; i < excerpts.length; i++) {
+        if (excerpts[i].innerHTML.length > 90) {
+            excerpts[i].innerHTML = excerpts[i].innerHTML.substr(0,90) + "...";
+        }
+
+        
+    }
+    console.log(document.getElementsByClassName('excerpt')[0].innerHTML);
 }, false);
 
 /**
